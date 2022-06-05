@@ -32,10 +32,11 @@ public class Game {
 		GraphicsEnvironment gEnvironement = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		gDevice = gEnvironement.getDefaultScreenDevice();
 
-		currentScreenWidth 
+		currentScreenWidth = 800;
+		currentScreenHeight = 600;
 
 		window = new JFrame();
-		window.setSize(800, 600);
+		window.setSize(currentScreenWidth, currentScreenHeight);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(new Color(53,52,89));
 		window.setLayout(null);
@@ -43,10 +44,10 @@ public class Game {
 		con = window.getContentPane();
 		
 		titleNamePanel = new JPanel();
-		int tnp_x;
-		int tnp_y;
-		int tnp_w;
-		int tnp_h;
+		int tnp_x = (int)Math.round(currentScreenWidth*0.125);
+		int tnp_y = (int)Math.round(currentScreenHeight*0.125);
+		int tnp_w = (int)Math.round(currentScreenWidth*0.75);
+		int tnp_h = (int)Math.round(currentScreenHeight*0.25);
 		titleNamePanel.setBounds(tnp_x, tnp_y, tnp_w, tnp_h);
 //      titleNamePanel.setBounds(100, 100, 600, 150);
 		titleNamePanel.setBackground(new Color(53,52,89));

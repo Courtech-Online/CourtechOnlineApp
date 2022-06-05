@@ -32,8 +32,8 @@ public class Game {
 		GraphicsEnvironment gEnvironement = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		gDevice = gEnvironement.getDefaultScreenDevice();
 
-		currentScreenWidth = 800;
-		currentScreenHeight = 600;
+		currentScreenWidth = 1600;
+		currentScreenHeight = 900;
 
 		window = new JFrame();
 		window.setSize(currentScreenWidth, currentScreenHeight);
@@ -56,7 +56,11 @@ public class Game {
 		titleNameLabel.setFont(titleFont);
 		
 		startButtonPanel = new JPanel();
-		startButtonPanel.setBounds(300, 400, 200, 100);
+		int sbp_x = (int)Math.round(currentScreenWidth*0.375);
+		int sbp_y = (int)Math.round(currentScreenHeight*0.666);
+		int sbp_w = (int)Math.round(currentScreenWidth*0.25);
+		int sbp_h = (int)Math.round(currentScreenHeight*0.125);
+		startButtonPanel.setBounds(sbp_x, sbp_y, sbp_w, sbp_h);
 		startButtonPanel.setBackground(new Color(53,52,89));
 		
 		startButton = new JButton("Learning");

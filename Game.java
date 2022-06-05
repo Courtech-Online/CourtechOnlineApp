@@ -16,8 +16,8 @@ public class Game {
 	JPanel titleNamePanel, startButtonPanel;
 	JLabel titleNameLabel;
 	JButton startButton;
-	Font titleFont = new Font("Raleway, Courant", Font.PLAIN, 60);
-	Font normalFont = new Font("Time New Roman", Font.PLAIN, 30);
+	Font titleFont;
+	Font normalFont;
 	
     GraphicsDevice gDevice;
 	int currentScreenWidth, currentScreenHeight;
@@ -43,6 +43,20 @@ public class Game {
 		window.setVisible(true);
 		con = window.getContentPane();
 		
+        createFont();
+		createUIComponent();
+
+	}
+	public void createFont(){
+
+		int titleFontSize = (int)Math.round(currentScreenWidth*0.2000);
+		titleFont = new Font("Raleway, Courant", Font.PLAIN, titleFontSize);
+		int titlenormalFontSize = (int)Math.round(currentScreenHeight*0.035)
+	    normalFont = new Font("Time New Roman", Font.PLAIN, titlenormalFontSize);
+	}
+	public void createUIComponent(){
+		
+		//Title New Panel
 		titleNamePanel = new JPanel();
 		int tnp_x = (int)Math.round(currentScreenWidth*0.125);
 		int tnp_y = (int)Math.round(currentScreenHeight*0.125);
@@ -54,7 +68,7 @@ public class Game {
 		titleNameLabel = new JLabel("COURTECH ONLINE");
 		titleNameLabel.setForeground(new Color(132,76,199));
 		titleNameLabel.setFont(titleFont);
-		
+		//Start Button
 		startButtonPanel = new JPanel();
 		int sbp_x = (int)Math.round(currentScreenWidth*0.375);
 		int sbp_y = (int)Math.round(currentScreenHeight*0.666);
